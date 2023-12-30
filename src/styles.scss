@@ -1,0 +1,25 @@
+@import "primeng/resources/themes/lara-light-blue/theme.css";
+@import "primeng/resources/primeng.min.css";
+@import "primeflex/primeflex.scss";
+@import "primeicons/primeicons.css";
+
+
+:root {
+  --border-radius: 4px;
+  --block-box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  --block-gap: 40px;
+  --color-primary: #3b82f6;
+  --color-error: #cc3333;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 20px;
+}
+
+.p-toast {
+  max-width: calc(100vw - 60px);
+}

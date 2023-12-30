@@ -1,0 +1,8 @@
+@if (userService.isLoggedIn) {
+    <h1>Hello, {{ userService.username }}!</h1>
+    Play the game: <a routerLink="main">LETS GOOOOOO</a><br><br>
+    <p-button label="Logout" (onClick)="userService.logout()"></p-button>
+} @else {
+    <h1>Hello, guest!</h1>
+    <button routerLink="/login" icon="pi pi-user" label="Sign In..." pButton></button>
+}

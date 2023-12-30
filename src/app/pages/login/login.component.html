@@ -1,0 +1,21 @@
+<form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)" class="flex flex-column align-items-center">
+    <div class="surface-card p-4 shadow-2 border-round w-full md:w-30rem">
+        <div class="text-center mb-5">
+            <img alt="Duck" class="mb-3" src="./assets/duck_hi.gif" width="120">
+            <div class="text-900 text-3xl font-medium mb-3">Welcome Back</div>
+            <span class="text-600 font-medium line-height-3">Don't have an account?</span>
+            <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer" routerLink="/register">Create
+                today!</a>
+        </div>
+        <div>
+            <label class="block text-900 font-medium mb-2" for="username">Username</label>
+            <input class="w-full mb-3" id="username" name="username" ngModel pInputText placeholder="Username"
+                   type="text">
+            <label class="block text-900 font-medium mb-2" for="password">Password</label>
+            <input class="w-full mb-3" id="password" name="password" ngModel pInputText placeholder="Password"
+                   type="password">
+            <button [disabled]="loginForm.value.username == '' || loginForm.value.password == ''" class="w-full"
+                    icon="pi pi-user" label="Sign In" pButton pRipple></button>
+        </div>
+    </div>
+</form>

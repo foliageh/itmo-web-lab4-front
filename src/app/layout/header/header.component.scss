@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--block-gap);
+}
+
+.student-info {
+  padding: 0 2em;
+  border-radius: var(--border-radius);
+  box-shadow: var(--block-box-shadow);
+  text-align: center;
+  background-color: var(--color-primary);
+  color: white;
+}

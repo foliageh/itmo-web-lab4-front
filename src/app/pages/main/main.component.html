@@ -1,0 +1,73 @@
+<div class="main">
+    <div class="control">
+        <div class="plot">
+            <canvas #plot (click)="onCanvasClick($event)" id="plot__canvas" width="300" height="300"></canvas>
+        </div>
+        <form id="shot_form" #shotForm="ngForm" (ngSubmit)="onSubmit(shotForm)">
+            <p-inputGroup class="input-block">
+                <p-inputGroupAddon>
+                    X
+                </p-inputGroupAddon>
+                <div class="card flex justify-content-center gap-3 ml-3 flex-wrap md:flex-nowrap">
+                    @for (x of availableX; track x) {
+                        <p-checkbox name="x" [value]="x" ngModel [(ngModel)]="selectedX" [label]="x.toString()"
+                                    (onChange)="handleXChanged($event)"></p-checkbox>
+                    }
+                </div>
+            </p-inputGroup>
+            <p-inputGroup class="input-block">
+                <p-inputGroupAddon>
+                    Y
+                </p-inputGroupAddon>
+                <input pInputText name="y" ngModel placeholder="Y Coordinate (from -3 to 3)"
+                       pattern="^(?:-3|\+?3)(?:[.,]0{1,15})?$|^(?:-[210]|\+?[012])(?:[.,]\d{1,15})?$"/>
+            </p-inputGroup>
+            <p-inputGroup class="input-block">
+                <p-inputGroupAddon>
+                    R
+                </p-inputGroupAddon>
+                <div class="card flex justify-content-center gap-3 ml-3">
+                    @for (r of availableR; track r) {
+                        <p-checkbox name="r" [value]="r" ngModel [(ngModel)]="selectedR" [label]="r.toString()"
+                                    (onChange)="handleRChanged($event)"></p-checkbox>
+                    }
+                </div>
+            </p-inputGroup>
+            <button class="shoot-button" label="Shoot" pButton [disabled]="!isFormValid(shotForm)"></button>
+        </form>
+        <button label="Back" pButton routerLink="/index" style="margin-top: -20px;"></button>
+    </div>
+    <div class="table">
+        <div class="card" id="shot_table">
+            <p-table
+                    [value]="shots"
+                    [paginator]="true"
+                    [sortOrder]="-1" sortField="id"
+                    [rows]="10" [rowsPerPageOptions]="[5, 10, 15]"
+                    [showCurrentPageReport]="true"
+                    [totalRecords]="shots.length"
+                    currentPageReportTemplate="Showing {first} to {last} of {totalRecords} records"
+            >
+                <ng-template pTemplate="header">
+                    <tr>
+                        <!--<th pSortableColumn="id" style="width: 90px">Id-->
+                        <!--    <p-sortIcon field="id"></p-sortIcon>-->
+                        <!--</th>-->
+                        <th style="width: 90px">Id</th>
+                        <th style="width: 250px">Shot</th>
+                        <th>Time</th>
+                        <th>Result</th>
+                    </tr>
+                </ng-template>
+                <ng-template let-shot pTemplate="body">
+                    <tr>
+                        <td>{{ shot.id }}</td>
+                        <td>{{ '(' + shot.x + '; ' + shot.y + '; ' + shot.r + ')' }}</td>
+                        <td>{{ shot.shotTime }}</td>
+                        <td>{{ shot.inArea ? 'In' : 'Out' }}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+        </div>
+    </div>
+</div>
