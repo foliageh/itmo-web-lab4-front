@@ -3,8 +3,8 @@
 **SPA for [lab work #4 fullstack app](https://github.com/foliageh/itmo-web-lab4) on Angular 17 & RxJS**.  
 Angular 17, TypeScript, RxJS, HTML, SCSS, PrimeNG, PrimeFlex.
 
-<img src="https://github.com/foliageh/itmo-web-lab4/assets/46216950/1ee767e8-1170-4326-aaf0-de7784a48c1f" alt="image" width="330">
-<img src="https://github.com/foliageh/itmo-web-lab4/assets/46216950/2bd81da9-3928-4270-bc42-c5a75a252ee5" alt="image" width="675">
+<img src="https://github.com/foliageh/itmo-web-lab4/assets/46216950/7900419f-3e09-47db-b441-61c95821d755" alt="image" width="800"><br>
+<img src="https://github.com/foliageh/itmo-web-lab4/assets/46216950/2bd81da9-3928-4270-bc42-c5a75a252ee5" alt="image" width="800">
 
 ---
 
